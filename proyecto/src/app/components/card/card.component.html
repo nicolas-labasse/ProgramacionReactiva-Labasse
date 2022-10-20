@@ -1,0 +1,128 @@
+
+<div class="container-fluid">
+    <button class="btn btn-success mb-5 mt-5" (click)="agregarPokemon()">Agregar Pokemon</button>
+    <div class="text-center mb-5">
+        <h1>Pokemons Iniciales (Promesas)</h1>
+    </div>
+    <div class="row">
+        <div class="col-4" *ngFor="let pokemons of pokemon">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-4" >
+                    <img
+                        [src]="pokemons.img"
+                      class="img-fluid rounded-start"
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <h4 class="me-3">{{pokemons.nivel}}</h4>
+                            <h5 class="card-title m-0">{{pokemons.name}}</h5>
+                            <p class="card-text ms-5">{{pokemons.type}}</p>
+                        </div>
+                     <h5 class="card-title m-0">Stats:</h5>
+                      <ul>
+                        <li>HP: {{pokemons.stats.hp}}</li>
+                        <li>Ataque: {{pokemons.stats.attack}}</li>
+                        <li>Defensa: {{pokemons.stats.defense}}</li>
+                        <li>Ataque Especial: {{pokemons.stats.spattack}}</li>
+                        <li>Defensa Especial: {{pokemons.stats.spdefense}}</li>
+                        <li>Velocidad: {{pokemons.stats.speed}}</li>
+                      </ul>
+                      <p class="card-text">
+                        <small class="text-muted">Habilidad: {{pokemons.habilidades}}</small>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+  <button class="btn btn-success mb-5 mt-5" (click)="agregarPokemonObservable()">Agregar Pokemon</button>
+  <div class="text-center mb-5">
+      <h1>Pokemons Iniciales (observable)</h1>
+  </div>
+  <div class="row">
+      <div class="col-4" *ngFor="let pokemons of pokemon$ | async">
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4" >
+                  <img
+                      [src]="pokemons.img"
+                    class="img-fluid rounded-start"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center">
+                          <h4 class="me-3">{{pokemons.nivel}}</h4>
+                          <h5 class="card-title m-0">{{pokemons.name}}</h5>
+                          <p class="card-text ms-5">{{pokemons.type}}</p>
+                      </div>
+                   <h5 class="card-title m-0">Stats:</h5>
+                    <ul>
+                      <li>HP: {{pokemons.stats.hp}}</li>
+                      <li>Ataque: {{pokemons.stats.attack}}</li>
+                      <li>Defensa: {{pokemons.stats.defense}}</li>
+                      <li>Ataque Especial: {{pokemons.stats.spattack}}</li>
+                      <li>Defensa Especial: {{pokemons.stats.spdefense}}</li>
+                      <li>Velocidad: {{pokemons.stats.speed}}</li>
+                    </ul>
+                    <p class="card-text">
+                      <small class="text-muted">Habilidad: {{pokemons.habilidades}}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="text-center mb-5">
+      <h1>Pokemons Filtrado con map</h1>
+  </div>
+  <div class="row">
+      <div class="col-4" *ngFor="let pokemons of blastoise">
+          <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4" >
+                  <img
+                      [src]="pokemons.img"
+                    class="img-fluid rounded-start"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center">
+                          <h4 class="me-3">{{pokemons.nivel}}</h4>
+                          <h5 class="card-title m-0">{{pokemons.name}}</h5>
+                          <p class="card-text ms-5">{{pokemons.type}}</p>
+                      </div>
+                   <h5 class="card-title m-0">Stats:</h5>
+                    <ul>
+                      <li>HP: {{pokemons.stats.hp}}</li>
+                      <li>Ataque: {{pokemons.stats.attack}}</li>
+                      <li>Defensa: {{pokemons.stats.defense}}</li>
+                      <li>Ataque Especial: {{pokemons.stats.spattack}}</li>
+                      <li>Defensa Especial: {{pokemons.stats.spdefense}}</li>
+                      <li>Velocidad: {{pokemons.stats.speed}}</li>
+                    </ul>
+                    <p class="card-text">
+                      <small class="text-muted">Habilidad: {{pokemons.habilidades}}</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
